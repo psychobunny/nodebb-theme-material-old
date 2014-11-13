@@ -1,0 +1,50 @@
+.groups {
+	.members {
+		padding-left: 0;
+
+		li {
+			list-style-type: none;
+			display: inline-block;
+
+			img {
+				width: 32px;
+			}
+		}
+
+		.truncated {
+			vertical-align: bottom;
+		}
+	}
+
+	.view-full {
+		float: right;
+	}
+
+	&.details {
+		.members {
+			tr {
+				.pointer;
+			}
+
+			img {
+				width: 32px;
+			}
+
+			.member-name {
+				vertical-align: middle;
+			}
+		}
+
+		.latest-posts {
+			.content {
+				max-height: 250px;
+				word-break: break-word;
+				overflow: hidden;
+				position: relative;
+			}
+			.user-img {
+				width: 32px;
+			}
+		}
+	}
+}

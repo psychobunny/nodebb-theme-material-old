@@ -1,0 +1,154 @@
+.header {
+
+	#user_label {
+		img {
+			border: 1px solid #454;
+			width: 19px;
+			height: 19px;
+		}
+
+		span {
+			font-size: 14px;
+			font-weight: 400;
+		}
+	}
+
+	.forum-title {
+		margin: 0px;
+	}
+
+	.forum-logo {
+		float: left;
+		max-height: 50px;
+		width: auto;
+	}
+
+	.header-topic-title {
+		text-align: right;
+		padding: 15px 15px;
+		font-size: 18px;
+		line-height: 20px;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+		span {
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			color: @brand-primary;
+		}
+	}
+
+	#notif-list {
+		li {
+			font-size: 12px;
+			width: 300px;
+			text-align: left;
+			margin-bottom: 5px;
+
+			a {
+				white-space: normal;
+				overflow: hidden;
+				margin: 0;
+				padding: 3px 20px;
+				text-overflow: ellipsis;
+
+				img {
+					max-width: 32px;
+					max-height: 32px;
+					float: left;
+				}
+
+				.text {
+					margin-left: 40px;
+					display: block;
+				}
+			}
+
+			&.pagelink {
+				margin-top: 1em;
+				border-top: 1px solid rgba(163, 163, 163, 0.5);
+
+				a {
+					display: block;
+					text-align: center;
+					padding-top: 0.5em;
+					font-weight: 600;
+				}
+			}
+
+			&.unread {
+    			.bg-variant(@state-warning-bg);
+			}
+		}
+	}
+
+	#chat-list {
+		#notif-list;
+
+		li {
+			width: 200px;
+
+			a {
+				white-space: nowrap;
+				line-height: 30px;
+
+				img {
+					width: 32px;
+					margin-right: 1em;
+				}
+			}
+
+			&.no_active a {
+				white-space: normal;
+			}
+		}
+	}
+}
+
+
+.breadcrumb {
+	li {
+		max-width: 100%;
+		.text-ellipsis;
+	}
+}
+
+#reconnect {
+	font-size: 14px;
+	-webkit-transition: opacity 250ms linear;
+	-moz-transition: opacity 250ms linear;
+	-ms-transition: opacity 250ms linear;
+	-o-transition: opacity 250ms linear;
+	transition: opacity 250ms linear;
+	-moz-opacity: 0.00;
+	opacity: 0.00;
+	min-width: 45px;
+
+	&.active {
+		-moz-opacity: 1;
+		opacity: 1;
+	}
+
+	& +div.tooltip .tooltip-inner {
+		width: 350px;
+	}
+}
+
+.unread-count:after {
+	content: attr(data-content);
+	position: relative;
+	left: -6px;
+	top: -7px;
+	font-size: 10px;
+	text-align: center;
+	border: 1px solid #890405;
+	color: #fff;
+	font-weight: bold;
+	min-width: 20px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	background: #c91106;
+	padding: 1px 2px;
+	font-family: @font-family-sans-serif;
+}

@@ -1,0 +1,5 @@
+{
+	"id": "nodebb-theme-persona",
+	"library": "./lib/theme.js",
+	"hooks": []
+}

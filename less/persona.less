@@ -3,6 +3,10 @@ button.btn {
 	text-transform: uppercase;
 	font-weight: 600;
 	padding-left: 0;
+	
+	box-shadow: none;
+	background: none;
+	border-color: none;
 }
 
 .pull-right {
@@ -12,6 +16,26 @@ button.btn {
 	}
 }
 
-.dropdown-toggle:hover {
-	background: none;
+.dropdown-toggle {
+	&:hover, &:active {
+		background: none;
+	}
 }
+
+.open {
+	.dropdown-toggle {
+		box-shadow: none !important;
+		background: none !important;
+		border-color: none !important;
+	}
+
+	.dropdown-menu {
+		margin-top: -34px; // find variable
+		border-radius: 0px;
+	}
+
+	&.dropup .dropdown-menu {
+		margin-bottom: -34px; // find variable
+	}
+}
+

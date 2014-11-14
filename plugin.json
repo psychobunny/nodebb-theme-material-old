@@ -1,5 +1,9 @@
 {
 	"id": "nodebb-theme-persona",
 	"library": "./lib/theme.js",
-	"hooks": []
+	"hooks": [
+		{
+			"hook": "filter:category.get", "method": "addPostData"
+		}
+	]
 }

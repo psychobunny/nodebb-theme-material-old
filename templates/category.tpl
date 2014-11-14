@@ -64,21 +64,22 @@
 			<li class="category-item<!-- IF topics.locked --> locked<!-- ENDIF topics.locked --><!-- IF topics.pinned --> pinned<!-- ENDIF topics.pinned --><!-- IF topics.deleted --> deleted<!-- ENDIF topics.deleted --><!-- IF topics.unread --> unread<!-- ENDIF topics.unread -->" itemprop="itemListElement" data-tid="{topics.tid}" data-index="{topics.index}">
 
 				<div class="col-md-12 col-xs-12 panel panel-default topic-row">
-					<!-- IF privileges.editable -->
-						<i class="fa fa-fw fa-square-o pull-left select pointer"></i>
-					<!-- ENDIF privileges.editable -->
-					<a href="{relative_path}/user/{topics.user.userslug}" class="pull-left">
-						<img src="<!-- IF topics.thumb -->{topics.thumb}<!-- ELSE -->{topics.user.picture}<!-- ENDIF topics.thumb -->" class="img-rounded user-img" title="{topics.user.username}"/>
-					</a>
+					<span class="select fa-square-o">
+						<img src="<!-- IF topics.thumb -->{topics.thumb}<!-- ELSE -->{topics.user.picture}<!-- ENDIF topics.thumb -->" class="img-circle user-img" />
+						<i class="fa fa-check"></i>
+					</span>
 
-					<h3>
+					<!-- title="{topics.user.username}" <a href="{relative_path}/user/{topics.user.userslug}" -->
+
+					<strong>
 						<a href="{relative_path}/topic/{topics.slug}" itemprop="url">
 							<meta itemprop="name" content="{topics.title}">
 
 							<strong><i class="fa fa-thumb-tack<!-- IF !topics.pinned --> hide<!-- ENDIF !topics.pinned -->"></i> <i class="fa fa-lock<!-- IF !topics.locked --> hide<!-- ENDIF !topics.locked -->"></i></strong>
 							<span class="topic-title">{topics.title}</span>
 						</a>
-					</h3>
+					</strong>
+					<br />
 
 					<small>
 						<span class="topic-stats">

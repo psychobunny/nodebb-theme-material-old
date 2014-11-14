@@ -41,3 +41,42 @@ button.btn {
 	}
 }
 
+
+
+.category {
+	#topics-container {
+		.category-item {
+			.select {
+				&:before {
+					content: "";
+				}
+
+				.fa-check {
+					margin-left: -65px;
+					border: 1px solid #999;
+					padding: 15px;
+					border-radius: 50%;
+					visibility: hidden;
+
+					&:before {
+						.pointer;
+					}
+				}
+
+				.user-img {
+					.pointer;
+				}
+			}
+
+			&.selected {
+				.user-img {
+					visibility: hidden;
+				}
+
+				.fa-check {
+					visibility: visible;
+				}
+			}
+		}
+	}
+}

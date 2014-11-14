@@ -63,7 +63,7 @@
 			<!-- BEGIN topics -->
 			<li class="category-item<!-- IF topics.locked --> locked<!-- ENDIF topics.locked --><!-- IF topics.pinned --> pinned<!-- ENDIF topics.pinned --><!-- IF topics.deleted --> deleted<!-- ENDIF topics.deleted --><!-- IF topics.unread --> unread<!-- ENDIF topics.unread -->" itemprop="itemListElement" data-tid="{topics.tid}" data-index="{topics.index}">
 
-				<div class="col-md-12 col-xs-12 panel panel-default topic-row">
+				<div class="panel panel-default topic-row">
 					<span class="select fa-square-o">
 						<img src="<!-- IF topics.thumb -->{topics.thumb}<!-- ELSE -->{topics.user.picture}<!-- ENDIF topics.thumb -->" class="img-circle user-img" />
 						<i class="fa fa-check"></i>

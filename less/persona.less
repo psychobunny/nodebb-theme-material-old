@@ -49,16 +49,21 @@ button.btn {
 
 		.category-item {
 			.select {
+				position: relative;
+
 				&:before {
 					content: "";
 				}
 
 				.fa-check {
-					margin-left: -65px;
-					border: 1px solid #999;
-					padding: 15px;
+					border: 1px solid #CCC;
+					padding: 9px;
 					border-radius: 50%;
-					visibility: hidden;
+					position: absolute;
+					left: 0px;
+					font-size: 15px;
+					visibility: hidden;	
+					top: -3px;
 
 					&:before {
 						.pointer;
@@ -67,6 +72,7 @@ button.btn {
 
 				.user-img {
 					.pointer;
+					margin-top: -25px;
 				}
 			}
 
@@ -85,6 +91,16 @@ button.btn {
 				margin: 0px;
 				margin-bottom: -1px;
 				padding: 10px 15px;
+
+				.user-img {
+					width: 35px;
+					height: 35px;
+					margin-right: 15px;
+				}
+
+				.select, a {
+					display: inline-block;
+				}
 			}
 		}
 	}

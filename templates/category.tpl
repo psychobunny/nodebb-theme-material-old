@@ -62,54 +62,55 @@
 			<meta itemprop="itemListOrder" content="descending">
 			<!-- BEGIN topics -->
 			<li class="category-item<!-- IF topics.locked --> locked<!-- ENDIF topics.locked --><!-- IF topics.pinned --> pinned<!-- ENDIF topics.pinned --><!-- IF topics.deleted --> deleted<!-- ENDIF topics.deleted --><!-- IF topics.unread --> unread<!-- ENDIF topics.unread -->" itemprop="itemListElement" data-tid="{topics.tid}" data-index="{topics.index}">
-
-				<div class="panel panel-default topic-row">
-					<span class="select fa-square-o">
+				<div class="panel panel-default topic-row clearfix">
+					<div class="topic-avatar select fa-square-o">
 						<img src="<!-- IF topics.thumb -->{topics.thumb}<!-- ELSE -->{topics.user.picture}<!-- ENDIF topics.thumb -->" class="img-circle user-img" />
 						<i class="fa fa-check"></i>
-					</span>
+					</div>
 
 					<!-- title="{topics.user.username}" <a href="{relative_path}/user/{topics.user.userslug}" -->
+					<div class="topic-content">
+						<a href="{relative_path}/topic/{topics.slug}" itemprop="url">
+							<meta itemprop="name" content="{topics.title}">
 
-					<a href="{relative_path}/topic/{topics.slug}" itemprop="url">
-						<meta itemprop="name" content="{topics.title}">
+							<strong><i class="fa fa-thumb-tack<!-- IF !topics.pinned --> hide<!-- ENDIF !topics.pinned -->"></i> <i class="fa fa-lock<!-- IF !topics.locked --> hide<!-- ENDIF !topics.locked -->"></i></strong>
+							<strong class="topic-title">{topics.title}</strong>
 
-						<strong><i class="fa fa-thumb-tack<!-- IF !topics.pinned --> hide<!-- ENDIF !topics.pinned -->"></i> <i class="fa fa-lock<!-- IF !topics.locked --> hide<!-- ENDIF !topics.locked -->"></i></strong>
-						<strong class="topic-title">{topics.title}</strong>
+							<br />
+							<small class="post-content">{topics.mainPost.content}</small>
 
-						<br />
+							<small>
+								<span class="topic-stats">
+									[[global:posts]]
+									<strong class="human-readable-number" title="{topics.postcount}">{topics.postcount}</strong>
+								</span>
+								|
+								<span class="topic-stats">
+									[[global:views]]
+									<strong class="human-readable-number" title="{topics.viewcount}">{topics.viewcount}</strong>
+								</span>
+								|
+								<span>
+									[[global:posted_ago, <span class="timeago" title="{topics.relativeTime}"></span>]]
+								</span>
 
-						<small>
-							<span class="topic-stats">
-								[[global:posts]]
-								<strong class="human-readable-number" title="{topics.postcount}">{topics.postcount}</strong>
-							</span>
-							|
-							<span class="topic-stats">
-								[[global:views]]
-								<strong class="human-readable-number" title="{topics.viewcount}">{topics.viewcount}</strong>
-							</span>
-							|
-							<span>
-								[[global:posted_ago, <span class="timeago" title="{topics.relativeTime}"></span>]]
-							</span>
+								<span class="pull-right">
+									<!-- IF topics.unreplied -->
+									[[category:no_replies]]
+									<!-- ELSE -->
+									<a href="<!-- IF topics.teaser.user.userslug -->{relative_path}/user/{topics.teaser.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.teaser.user.userslug -->">
+										<img class="teaser-pic" src="{topics.teaser.user.picture}" title="{topics.teaser.user.username}"/>
+									</a>
+									<a href="{relative_path}/topic/{topics.slug}/{topics.teaser.index}">
+										[[global:replied_ago, <span class="timeago" title="{topics.teaser.timestamp}"></span>]]
+									</a>
+									<!-- ENDIF topics.unreplied -->
+								</span>
 
-							<span class="pull-right">
-								<!-- IF topics.unreplied -->
-								[[category:no_replies]]
-								<!-- ELSE -->
-								<a href="<!-- IF topics.teaser.user.userslug -->{relative_path}/user/{topics.teaser.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.teaser.user.userslug -->">
-									<img class="teaser-pic" src="{topics.teaser.user.picture}" title="{topics.teaser.user.username}"/>
-								</a>
-								<a href="{relative_path}/topic/{topics.slug}/{topics.teaser.index}">
-									[[global:replied_ago, <span class="timeago" title="{topics.teaser.timestamp}"></span>]]
-								</a>
-								<!-- ENDIF topics.unreplied -->
-							</span>
-
-							<!-- IMPORT partials/category_tags.tpl -->
-						</small>
-					</a>
+								<!-- IMPORT partials/category_tags.tpl -->
+							</small>
+						</a>
+					</div>
 				</div>
 			</li>
 			<!-- END topics -->

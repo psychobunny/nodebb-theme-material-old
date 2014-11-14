@@ -56,6 +56,10 @@ button.btn {
 					.topic-title {
 						opacity: 1;
 					}
+
+					.post-content {
+						display: block;
+					}
 				}
 			}
 
@@ -74,7 +78,7 @@ button.btn {
 					left: 0px;
 					font-size: 15px;
 					visibility: hidden;	
-					top: -3px;
+					top: 2px;
 
 					&:before {
 						.pointer;
@@ -83,7 +87,7 @@ button.btn {
 
 				.user-img {
 					.pointer;
-					margin-top: -25px;
+					margin-top: -14px;
 				}
 			}
 
@@ -116,6 +120,26 @@ button.btn {
 				.topic-title {
 					color: #333;
 					opacity: 0.65;
+				}
+			}
+
+			.topic-avatar {
+				width: 50px;
+				float: left;
+			}
+
+			.topic-content {
+				float: left;
+				width: 100%;
+				margin-right: -100px;
+				padding-right: 55px;
+				overflow: hidden;
+
+				.post-content {
+					max-height: 40px;
+					overflow: hidden;
+					display: none;
+					color: #666;
 				}
 			}
 		}

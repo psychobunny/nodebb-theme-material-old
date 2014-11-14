@@ -48,6 +48,17 @@ button.btn {
 		box-shadow: 0px 2px 1px #AAA;
 
 		.category-item {
+			&.unread {
+				border-left: 2px solid @brand-primary;
+				margin-left: -2px;
+
+				.topic-row {
+					.topic-title {
+						opacity: 1;
+					}
+				}
+			}
+
 			.select {
 				position: relative;
 
@@ -100,6 +111,11 @@ button.btn {
 
 				.select, a {
 					display: inline-block;
+				}
+
+				.topic-title {
+					color: #333;
+					opacity: 0.65;
 				}
 			}
 		}

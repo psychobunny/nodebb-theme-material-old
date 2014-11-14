@@ -3,7 +3,7 @@
 	"library": "./lib/theme.js",
 	"hooks": [
 		{
-			"hook": "filter:category.get", "method": "addPostData"
+			"hook": "filter:category.topics.get", "method": "addPostData"
 		}
 	]
 }

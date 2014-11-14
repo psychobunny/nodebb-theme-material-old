@@ -1,74 +1,53 @@
 @import "../less/keyframes";
 
-.taskbar {
-	display: none;
-	-moz-opacity: 0.75;
-	opacity: 0.75;
-	margin-top: 0;
-	-webkit-transition: opacity 150ms ease-in;
-	   -moz-transition: opacity 150ms ease-in;
-	    -ms-transition: opacity 150ms ease-in;
-	     -o-transition: opacity 150ms ease-in;
-	        transition: opacity 150ms ease-in;
+#taskbar {
+	position: absolute;
+	z-index: 10;
+	width: 60px;
 
-	&[data-active="1"] {
-		display: block;
-	}
+	ul {
+		width: 100px;
+		list-style-type: none;
+		padding: 0px;
 
-	&:hover {
-		-moz-opacity: 1;
-		opacity: 1;
-	}
+		li {
+			width: 60px;
+			height: 60px;
+			background: @brand-primary;
+			border-radius: 50%;
+			margin-bottom: 20px;
+			box-shadow: 0 0 4px rgba(0,0,0,0.14), 0 4px 8px rgba(0,0,0,0.28);
 
-	&.navbar {
-		min-height: 32px;
-	}
+			a {
+				span {
+					display: none;
+				}
+			}
 
-	li {
-		float: left;
-
-		&.new a {
-			-webkit-animation: taskbar-active 3s infinite;
-			-moz-animation: taskbar-active 3s infinite;
-			-o-animation: taskbar-active 3s infinite;
-			animation: taskbar-active 3s infinite;
-		}
-
-		a {
-			padding: 3px 15px;
-			font-size: 13px;
-
-			> span {
-				max-width: 200px;
-				text-overflow: ellipsis;
-				white-space: nowrap;
-				overflow: hidden;
+			&[data-module="composer"] {
+				background: @brand-success;
 			}
 		}
-
-		img {
-			max-width: 24px;
-			max-height: 24px;
-			margin-right: 1em;
-		}
-
-		&.pulse {
-			-webkit-animation: pulsate 2500ms linear;
-			-webkit-animation-iteration-count: infinite;
-		}
-
-		@-webkit-keyframes pulsate {
-			0% { background: none; }
-			50% { background: #e5e5e5; }
-			100% { background: none; }
-		}
 	}
 
+	right: 20px;
+	bottom: 0px;
+}
 
-	@media (max-width: 979px) {
-		/*
-	 		Gets in the way of entering text when writing posts
-		*/
-		display: none !important;
+@media (min-width: @screen-sm-min) {
+	#taskbar {
+
+	}
+}
+
+@media (min-width: @screen-md-min) {
+	#taskbar {
+
+	}
+}
+
+@media (min-width: @screen-lg-min) {
+	#taskbar {
+		margin-right: 30px;
 	}
 }
